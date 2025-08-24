@@ -1,0 +1,21 @@
+#torch>=2.3 # docker 에서 24.02로 하면 pytorch 환경까지 포함되므로 requirements 에서 필요 X, 그리고 이미 conda test에서는 torch 정상
+transformers>=4.48.0
+datasets>=2.20
+accelerate>=0.33
+sentencepiece
+evaluate
+scikit-learn
+pandas
+numpy
+
+# 노트북/로깅
+jupyterlab
+tensorboard
+wandb
+tqdm #
+
+# 선택: 양자화/경량화 등 (GPU+리눅스 x86_64에서만)
+# bitsandbytes
+# peft
+omegaconf==2.3.0
+

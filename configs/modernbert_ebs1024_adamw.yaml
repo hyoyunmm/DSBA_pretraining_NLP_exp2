@@ -1,0 +1,32 @@
+seed: 42
+data:
+  model_name: answerdotai/ModernBERT-base
+  max_len: 128
+  train_frac: 0.8
+  val_frac: 0.1
+  test_frac: 0.1
+  batch_size: 16
+  num_workers: 2
+model:
+  model_name: answerdotai/ModernBERT-base
+  dropout: 0.1
+  pooling: cls
+  num_labels: 2
+  freeze_backbone: false
+train_config:
+  epochs: 5
+  lr: 5e-5
+  accum_steps: 64
+  weight_decay: 0.01
+  warmup_ratio: 0.06
+  grad_clip: 1.0
+  device: auto
+  optimizer: adamw
+  scheduler: constant
+  log_every: 50
+  deterministic: false
+  output_dir: outputs/modernbert_ebs1024_adamw
+logging:
+  use_wandb: true
+  project: nlp-bert-grad-accumulation
+  run_name: modernbert_ebs1024_adamw
