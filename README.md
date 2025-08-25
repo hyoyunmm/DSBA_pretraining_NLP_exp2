@@ -1,10 +1,11 @@
 # DSBA_pretraining_NLP_exp2
 
-## 목표 1. gradient accumulation 적용, best EBS(업데이트되는 기준 갯수) 찾기
+## 목표 1. gradient accumulation 적용, best EBS 찾기
 
 ### 1-1. 기본 setup 및 비교대상(model, EBS)
-  - bs, optimizer: 16, adam
-  - EBS(=batch_size * accum_steps): 256 vs. 512 vs. 1024
+  - lr, bs, optimizer: 5e-5, 16, adam
+  - accum_steps: 16, 32, 64
+  - EBS(업데이트되는 기준 갯수 = batch_size * accum_steps): 256 vs. 512 vs. 1024
 
 - 결과
   
