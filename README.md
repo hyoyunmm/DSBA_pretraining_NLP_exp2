@@ -1,1 +1,24 @@
 # DSBA_pretraining_NLP_exp2
+
+## 목표 1. gradient accumulation 적용, best EBS(업데이트되는 기준 갯수) 찾기
+
+### 1-1. 기본 setup 및 비교대상(model, EBS)
+  - bs, optimizer: 16, adam
+  - EBS(=batch_size * accum_steps): 256 vs. 512 vs. 1024
+
+- 결과
+  
+| Name               | data.batch_size | accum_steps | optimizer | lr      | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
+|--------------------|-----------------|-------------|-----------|---------|-----------|------------|---------|----------|----------|-----------|
+| **bert_ebs256**        | 16              | 16          | adam      | 0.00005 | 0.8125    | 0.4442     | 0.7834  | 0.4706   | **0.8590**   | 0.3186    |
+| bert_ebs512        | 16              | 32          | adam      | 0.00005 | 0.8438    | 0.3463     | 0.8378  | 0.3742   | 0.8582   | 0.3207    |
+| bert_ebs1024       | 16              | 64          | adam      | 0.00005 | 0.8906    | 0.2660     | 0.8676  | 0.3071   | 0.8688   | 0.3014    |
+| modernbert_ebs256  | 16              | 16          | adam      | 0.00005 | 0.9219    | 0.2016     | 0.8962  | 0.2482   | 0.8994   | 0.2460    |
+| **modernbert_ebs512**  | 16              | 32          | adam      | 0.00005 | 0.9375    | 0.1574     | 0.9076  | 0.2249   | **0.9054**   | 0.2308    |
+| modernbert_ebs1024 | 16              | 64          | adam      | 0.00005 | 0.9531    | 0.1282     | 0.9050  | 0.2392   | 0.9040   | 0.2420    |
+
+
+  
+## 목표 2. aacelerate로 gradient accumulation 적용, best EBS
+### 2-1. 기본 setup 동일하게 실험
+### 2-2. optimizer 변경 후 비교
