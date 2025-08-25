@@ -36,6 +36,7 @@
 ### 2-2. optimizer 변경(adamW) 후 비교
 
 - 결과: bert(256), modernbert(512)
+- 그런데... 뒤늦게 코드 오류 발견 -> 재실험 필요
 
 | Name                   | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |------------------------|-----------|------------|---------|----------|----------|-----------|
