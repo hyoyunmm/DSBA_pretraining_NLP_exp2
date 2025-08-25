@@ -22,8 +22,8 @@
   
 ## 목표 2. aacelerate로 gradient accumulation 적용, best EBS
 ### 2-1. 기본 setup 동일하게 실험
-
 - 결과
+
 | Name               | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |--------------------|-----------|------------|---------|----------|----------|-----------|
 | bert_ebs256        | 0.7762    | 0.0292     | 0.6018  | 0.8700   | **0.8138**   | 0.4088    |
@@ -33,7 +33,7 @@
 | modernbert_ebs512  | 0.8792    | 0.0090     | 0.8846  | 0.2742   | **0.8898**   | 0.2702    |
 | modernbert_ebs1024 | –         | –          | 0.8792  | 0.2903   | 0.8840   | 0.2881    |
 
-### 2-2. optimizer 변경 후 비교
+### 2-2. optimizer 변경(adamW) 후 비교
 
 - 결과
 
