@@ -7,7 +7,7 @@
   - accum_steps: 16, 32, 64
   - EBS(업데이트되는 기준 갯수 = batch_size * accum_steps): 256 vs. 512 vs. 1024
 
-- 결과
+- 결과: bert(256), modernbert(512)
   
 | Name               | data.batch_size | accum_steps | optimizer | lr      | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |--------------------|-----------------|-------------|-----------|---------|-----------|------------|---------|----------|----------|-----------|
@@ -22,7 +22,7 @@
   
 ## 목표 2. aacelerate로 gradient accumulation 적용, best EBS
 ### 2-1. 기본 setup 동일하게 실험
-- 결과
+- 결과: bert(256), modernbert(512)
 
 | Name               | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |--------------------|-----------|------------|---------|----------|----------|-----------|
@@ -35,7 +35,7 @@
 
 ### 2-2. optimizer 변경(adamW) 후 비교
 
-- 결과
+- 결과: bert(256), modernbert(512)
 
 | Name                   | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |------------------------|-----------|------------|---------|----------|----------|-----------|
