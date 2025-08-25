@@ -23,6 +23,9 @@
 ## 목표 2. aacelerate로 gradient accumulation 적용, best EBS
 ### 2-1. 기본 setup 동일하게 실험
 - 결과: bert(256), modernbert(512)
+![Uploading W&B Chart 2025. 8. 25. 오후 2_16_18.png…]()
+
+![Uploading W&B Chart 2025. 8. 25. 오후 2_16_18.png…]()
 
 | Name               | train/acc | train/loss | val/acc | val/loss | test/acc | test/loss |
 |--------------------|-----------|------------|---------|----------|----------|-----------|
